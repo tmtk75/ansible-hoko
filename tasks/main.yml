@@ -1,0 +1,5 @@
+---
+# tasks for hoko
+- get_url: url=https://github.com/tmtk75/hoko/releases/download/v0.1.1/hoko_linux_amd64.zip dest=/usr/local/bin/hoko_linux_amd64.zip
+- command: unzip hoko_linux_amd64.zip chdir=/usr/local/bin
+
