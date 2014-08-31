@@ -1,2 +1,16 @@
 ---
 # defaults file for hoko
+version: 0.1.3
+
+# Port hoko listens at
+port: 9981
+
+# Value of secret for github webhook setting
+# https://github.com/${username}/{repository}/settings/hooks
+secret_token: abc123
+
+# Command line options for hoko
+# If secret_token is empty, you have to put -d (debug) option
+options: -d
+
+

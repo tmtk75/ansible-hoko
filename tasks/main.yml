@@ -1,5 +1,28 @@
 ---
 # tasks for hoko
-- get_url: url=https://github.com/tmtk75/hoko/releases/download/v0.1.1/hoko_linux_amd64.zip dest=/usr/local/bin/hoko_linux_amd64.zip
-- command: unzip hoko_linux_amd64.zip chdir=/usr/local/bin
+- user: name=hoko
 
+- group: name=hoko
+
+- get_url: url=https://github.com/tmtk75/hoko/releases/download/v{{ version }}/hoko_linux_amd64.zip
+  args:
+    dest: /tmp/hoko_linux_amd64.zip
+    mode: 0644
+
+- command: unzip -o /tmp/hoko_linux_amd64.zip chdir=/usr/local/bin
+
+- file: path=/usr/local/bin/hoko owner=hoko group=hoko mode=0755 state=file
+
+- file: path={{ item }} owner=hoko group=hoko mode=0755 state=directory
+  with_items:
+    - /etc/hoko.d
+
+- copy: src=./etc/init.d/hoko dest=/etc/init.d/hoko owner=hoko group=hoko mode=0755
+
+- template: src=.{{ item }} dest={{ item }} owner=hoko group=hoko mode=0644
+  with_items:
+    - /etc/hoko.conf
+    - /etc/hoko.d/serf.conf 
+    - /etc/sysconfig/hoko
+
+- service: name=hoko state=started enabled=yes
