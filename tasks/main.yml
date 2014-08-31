@@ -8,6 +8,7 @@
   args:
     dest: /tmp/hoko_linux_amd64.zip
     mode: 0644
+    sha256sum: "{{ sha256sum }}"
 
 - command: unzip -o /tmp/hoko_linux_amd64.zip chdir=/usr/local/bin
 
@@ -25,4 +26,9 @@
     - /etc/hoko.d/serf.conf 
     - /etc/sysconfig/hoko
 
+- template: src=.{{ item }} dest={{ item }} owner=hoko group=hoko mode=0755
+  with_items:
+    - /etc/hoko.d/echo.sh
+
 - service: name=hoko state=started enabled=yes
+
