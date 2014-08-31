@@ -58,7 +58,7 @@ start() {
     daemon \
         --pidfile=$pidfile \
         --user=$user \
-        " { PORT=$HOKO_PORT $exec run $HOKO_OPTIONS --config-file=$serfconffile &>> $logfile & } ; echo \$! >| $pidfile "
+        "cd $confdir; { PORT=$HOKO_PORT $exec run $HOKO_OPTIONS --config-file=$serfconffile &>> $logfile & } ; echo \$! >| $pidfile "
     
     RETVAL=$?
     echo
