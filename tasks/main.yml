@@ -20,11 +20,9 @@
 
 - copy: src=./etc/init.d/hoko dest=/etc/init.d/hoko owner=hoko group=hoko mode=0755
 
-- template: src=.{{ item }} dest={{ item }} owner=hoko group=hoko mode=0644
-  with_items:
-    - /etc/hoko.conf
-    - /etc/hoko.d/serf.conf 
-    - /etc/sysconfig/hoko
+- template: src={{ hoko_conf }} dest=/etc/hoko.conf owner=hoko group=hoko mode=0644
+- template: src={{ serf_conf }} dest=/etc/hoko.d/serf.conf owner=hoko group=hoko mode=0644
+- template: src={{ sysconfig }} dest=/etc/sysconfig/hoko owner=hoko group=hoko mode=0644
 
 - template: src=.{{ item }} dest={{ item }} owner=hoko group=hoko mode=0755
   with_items:

@@ -14,4 +14,8 @@ secret_token: abc123
 # If secret_token is empty, you have to put -d (debug) option
 options: -d
 
+# config files
+hoko_conf: ./etc/hoko.conf
+serf_conf: ./etc/hoko.d/serf.conf
+sysconfig: ./etc/sysconfig/hoko
 
