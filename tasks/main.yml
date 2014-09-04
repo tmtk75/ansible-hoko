@@ -4,7 +4,7 @@
 
 - group: name=hoko
 
-- get_url: url=https://github.com/tmtk75/hoko/releases/download/v{{ version }}/hoko_linux_amd64.zip
+- get_url: url=https://github.com/tmtk75/hoko/releases/download/v{{ version }}/hoko-{{ version }}_linux_amd64.zip
   args:
     dest: /tmp/hoko_linux_amd64.zip
     mode: 0644
