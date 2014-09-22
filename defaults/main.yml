@@ -1,7 +1,9 @@
 ---
 # defaults file for hoko
-version: 0.2.4
-sha256sum: 582fd5ea264fa67f60a40290c7337f22d9e14f9c248d07ac1835e98ea2dd3410
+#version: 0.2.4
+#sha256sum: 582fd5ea264fa67f60a40290c7337f22d9e14f9c248d07ac1835e98ea2dd3410
+version: 0.2.5
+sha256sum: 6339461abb857752da243f9effdd79d93f45a45926a6a1d72525ce91b92bf66d
 
 # Port hoko listens at
 port: 9981
