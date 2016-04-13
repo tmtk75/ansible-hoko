@@ -6,8 +6,8 @@
 #sha256sum: 6339461abb857752da243f9effdd79d93f45a45926a6a1d72525ce91b92bf66d
 #version: 0.2.6
 #sha256sum: 1147343c6cc95a0af925db5f237bae247e5d4bc1cba62fa4ad3da2e246139c15
-version: 0.3.0
-sha256sum: 52f1c6f6fb29b79e77b8679eb977fb938262874e4fcce0c0e1a18cbc29bd5f72
+hoko_version: 0.3.1
+sha256sum: d5a82b3a5f3a285a8d9c991ed507d3e330af3c64c021e704db36adfec88ada19
 
 # Port hoko listens at
 port: 9981

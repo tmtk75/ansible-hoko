@@ -4,13 +4,13 @@
 
 - group: name=hoko
 
-- get_url: url=https://github.com/tmtk75/hoko/releases/download/v{{ version }}/hoko-{{ version }}_linux_amd64.zip
+- get_url: url=https://github.com/tmtk75/hoko/releases/download/v{{ hoko_version }}/hoko-{{ hoko_version }}_linux_amd64.zip
   args:
-    dest: /tmp/hoko-{{ version }}_linux_amd64.zip
+    dest: /tmp/hoko-{{ hoko_version }}_linux_amd64.zip
     mode: 0644
     sha256sum: "{{ sha256sum }}"
 
-- command: unzip -o /tmp/hoko-{{ version }}_linux_amd64.zip chdir=/usr/local/bin
+- command: unzip -o /tmp/hoko-{{ hoko_version }}_linux_amd64.zip chdir=/usr/local/bin
 
 - file: path=/usr/local/bin/hoko owner=hoko group=hoko mode=0755 state=file
 
